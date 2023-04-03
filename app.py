@@ -90,7 +90,7 @@ class App:
     # To fetch data from Database 
     def fetch_filenames(self):
         GListBox_744.delete(0,END)
-        conn = pymysql.connect(host='localhost', user='root', password='password', db='audiodb')
+        conn = pymysql.connect(host='localhost', user='root', password='cdac123', db='audiodb')
         cur = conn.cursor()
         cur.execute("select * from audiofiles")
         filenames = cur.fetchall()
@@ -112,7 +112,7 @@ class App:
         GLineEdit_642.delete(0,END)
 
         # Connection with database to insert data into database and execute query.
-        conn = pymysql.connect(host='localhost', user='root', password='password', db='audiodb')
+        conn = pymysql.connect(host='localhost', user='root', password='cdac123', db='audiodb')
         cur = conn.cursor()
         cur.execute("insert into audiofiles (AF_NAme)values('%s')" % (f"{textv.get()}.mp3").replace(" ","_"))
         conn.commit()
